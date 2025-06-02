@@ -1,0 +1,12 @@
+import request from "supertest";
+import { expect, test } from "vitest";
+import app from "./server.js";
+
+test("Hello world", async () => {
+    const test = await request(app)
+        .get("/")
+        .send();
+    console.log(test);
+    expect(test.statusCode).toEqual(200);
+    expect(test.text).toEqual("Hello, world!");
+});
