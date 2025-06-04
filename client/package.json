@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "test": "vitest",
     "build": "vite build",
     "lint": "eslint .",
@@ -12,9 +12,13 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.8",
+    "@tanstack/react-query": "^5.80.3",
+    "axios": "^1.9.0",
     "daisyui": "^5.0.43",
+    "escape-string-regexp": "^5.0.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-router": "^7.6.2",
     "tailwindcss": "^4.1.8"
   },
   "devDependencies": {

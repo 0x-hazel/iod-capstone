@@ -9,7 +9,8 @@ const sessionSchema = new Schema({
     },
     expiresAt: {
         type: Date,
-        default: () => new Date(Date.now() + 1000 * 60 * 60 * 24 * 30)
+        default: () => new Date(Date.now() + 1000 * 60 * 60 * 24 * 30),
+        required: true
     }
 });
 

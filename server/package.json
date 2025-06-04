@@ -15,6 +15,7 @@
     "@oslojs/encoding": "^1.1.0",
     "argon2": "^0.43.0",
     "body-parser": "^2.2.0",
+    "cookie-parser": "^1.4.7",
     "express": "^5.1.0",
     "mongoose": "^8.15.1"
   },

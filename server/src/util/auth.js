@@ -48,14 +48,14 @@ export async function invalidateAllSessions(userId) {
 	await Session.deleteMany({ account: userId });
 };
 
-export function getSessionToken(userId) {
+export async function getSessionToken(userId) {
 	const token = generateSessionToken();
-	const session = createSession(token, userId);
+	const session = await createSession(token, userId);
 	return [session, token];
 }
 
-export function validateToken(token) {
-	if (token !== null) {
-		return validateSessionToken(token);
+export async function validateToken(token) {
+	if (token != null) {
+		return await validateSessionToken(token);
 	}
 }
