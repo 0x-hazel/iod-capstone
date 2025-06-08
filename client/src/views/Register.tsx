@@ -3,16 +3,20 @@ import axios from "axios";
 import React, { useMemo, useState } from "react";
 import { useNavigate } from "react-router";
 import escapeStringRegexp from 'escape-string-regexp';
+import qs from "qs";
 
 export default function Register() {
     const navigate = useNavigate();
     const mutation = useMutation({
-        mutationFn: (event) => {
+        mutationFn: (event: Event) => {
             event.preventDefault();
-            return axios.post("/api/auth/create-account");
+            const formData = new FormData(event.target as HTMLFormElement);
+            return axios.post("/api/auth/create-account", qs.stringify(Object.fromEntries(formData.entries())));
         },
         onSuccess: (response) => {
-            navigate("/");
+            if (response.status == 200) {
+                navigate("/");
+            }
         }
     });
     const [password, setPassword] = useState("");
@@ -22,7 +26,7 @@ export default function Register() {
             <div className="card card-border bg-base-100 w-96">
                 <div className="card-body items-center text-center">
                     <h2 className="card-title mb-8">Register</h2>
-                    <form onSubmit={mutation.mutate}>
+                    <form onSubmit={mutation.mutate} className="w-full">
                         <label className="floating-label w-full h-24">
                             <span>Your Username</span>
                             <input type="text" id="username" name="username" className="input validator" required placeholder="Username"
