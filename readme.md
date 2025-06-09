@@ -12,4 +12,4 @@ npm install
 npm start
 ```
 
-This will run the project in development mode. To run unit tests, instead run `npm run test`
+This will run the project in development mode. To run unit tests, instead run `npm run test`.
