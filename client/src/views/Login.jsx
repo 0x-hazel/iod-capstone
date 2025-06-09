@@ -7,9 +7,9 @@ import { useNavigate } from "react-router";
 export default function Login() {
     const navigate = useNavigate();
     const mutation = useMutation({
-        mutationFn: (event: Event) => {
+        mutationFn: (event) => {
             event.preventDefault();
-            const formData = new FormData(event.target as HTMLFormElement);
+            const formData = new FormData(event.target);
             return axios.post("/api/auth/login", qs.stringify(Object.fromEntries(formData.entries())));
         },
         onSuccess: (response) => {

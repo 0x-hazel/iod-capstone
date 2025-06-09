@@ -8,9 +8,9 @@ import qs from "qs";
 export default function Register() {
     const navigate = useNavigate();
     const mutation = useMutation({
-        mutationFn: (event: Event) => {
+        mutationFn: (event) => {
             event.preventDefault();
-            const formData = new FormData(event.target as HTMLFormElement);
+            const formData = new FormData(event.target);
             return axios.post("/api/auth/create-account", qs.stringify(Object.fromEntries(formData.entries())));
         },
         onSuccess: (response) => {
