@@ -1,13 +1,10 @@
 import { useCallback, useState } from "react";
 import useEditView from "../components/editView";
-import Markdown from "react-markdown";
-import remarkGfm from 'remark-gfm';
-import remarkImages from 'remark-images';
-import emoji from 'remark-emoji';
 import { useNavigate } from "react-router";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import qs from "qs";
+import MarkdownView from "../components/markdownView";
 
 export default function Write() {
     const navigate = useNavigate();
@@ -22,8 +19,9 @@ export default function Write() {
             const formData = new FormData(event.target);
             return axios.post("/api/post/create-post", qs.stringify(Object.fromEntries(formData.entries())));
         },
-        onSuccess: () => {
-            console.log("Yippee yay");
+        onSuccess: (result) => {
+            console.log(result.response.data.message);
+            navigate(result.response.data.message);
         }
     });
 
@@ -44,9 +42,7 @@ export default function Write() {
                         :
                         <>
                             <h1 className="text-lg my-2 md:my-4 mx-8">{title}</h1>
-                            <div className="card card-border border-secondary w-full" style={{height: `${height}px`}}><div className="card-body">
-                                <Markdown remarkPlugins={[emoji, remarkImages, remarkGfm]}>{contents}</Markdown>
-                            </div></div>
+                            <MarkdownView contents={contents} height={height} />
                         </>
                     }
                 </div>

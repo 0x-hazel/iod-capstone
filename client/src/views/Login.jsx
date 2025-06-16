@@ -3,9 +3,11 @@ import axios from "axios";
 import qs from "qs";
 import React from "react";
 import { useNavigate } from "react-router";
+import { useAlert } from "../components/alertSection";
 
 export default function Login() {
     const navigate = useNavigate();
+    const alert = useAlert();
     const mutation = useMutation({
         mutationFn: (event) => {
             event.preventDefault();
@@ -16,6 +18,9 @@ export default function Login() {
             if (response.status == 200) {
                 navigate("/");
             }
+        },
+        onError: (result) => {
+            alert({status: "error", message: `Error ${result.status}: ${result.response.data.message}`});
         }
     });
     return (

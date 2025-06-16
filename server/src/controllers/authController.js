@@ -10,7 +10,6 @@ controller.use(bodyParser.urlencoded({ extended: true }));
 controller.use(cookieParser());
 
 controller.post("/create-account", async (req, res) => {
-    console.log(req.body);
     const username = req.body?.username;
     const password = req.body?.password;
     const password2 = req.body?.password2;
@@ -57,6 +56,8 @@ controller.post("/login", async (req, res) => {
             } else {
                 return res.status(401).json({ status: "failed", message: "Incorrect username or password" });
             }
+        } else {
+            return res.status(401).json({ status: "failed", message: "Incorrect username or password" });
         }
     } catch (err) {
         return res.status(500).json({ status: "failed", message: err.message });

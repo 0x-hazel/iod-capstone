@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 const postSchema = new Schema({
-    slug: { type: String, unique: true, index: true },
+    slug: { type: String, index: true },
     title: String,
     author: {
         type: Schema.Types.ObjectId,
