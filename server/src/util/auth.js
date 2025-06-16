@@ -58,4 +58,5 @@ export async function validateToken(token) {
 	if (token != null) {
 		return await validateSessionToken(token);
 	}
+	return { session: null, user: null };
 }

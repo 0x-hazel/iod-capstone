@@ -1,9 +1,11 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import { useAlert } from "../components/alertSection";
 
 export default function Index() {
     const navigate = useNavigate();
+    const alert = useAlert();
     const status = useQuery({
         queryKey: ['status'],
         queryFn: async () => {
@@ -23,6 +25,7 @@ export default function Index() {
         <>
             <p>Hello, world!</p>
             { loggedIn ? <><p>Logged In</p><button className="btn" onClick={logOut.mutate}>Log Out</button></> : <p>Not Logged In</p> }
+            <button className="btn" onClick={() => alert({ status: "error", message: "Hell yeah" })}>Alert</button>
         </>
     );
 }

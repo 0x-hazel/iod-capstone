@@ -4,19 +4,24 @@ import React, { useMemo, useState } from "react";
 import { useNavigate } from "react-router";
 import escapeStringRegexp from 'escape-string-regexp';
 import qs from "qs";
+import { useAlert } from "../components/alertSection";
 
 export default function Register() {
     const navigate = useNavigate();
+    const alert = useAlert();
     const mutation = useMutation({
-        mutationFn: (event: Event) => {
+        mutationFn: (event) => {
             event.preventDefault();
-            const formData = new FormData(event.target as HTMLFormElement);
+            const formData = new FormData(event.target);
             return axios.post("/api/auth/create-account", qs.stringify(Object.fromEntries(formData.entries())));
         },
         onSuccess: (response) => {
             if (response.status == 200) {
                 navigate("/");
             }
+        },
+        onError: (result) => {
+            alert({status: "error", message: `Error ${result.status}: ${result.response.data.message}`});
         }
     });
     const [password, setPassword] = useState("");
