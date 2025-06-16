@@ -71,4 +71,25 @@ controller.get("/get-post/:user/:post", async (req, res) => {
     }
 });
 
+controller.get("/recent-posts", async (req, res) => {
+    try {
+        const posts = await Post.find().sort({created: -1}).limit(25).populate("author");
+        const results = posts.map((post) => {
+            return {
+                slug: post.slug,
+                title: post.title,
+                created: post.created,
+                author: {
+                    display_name: post.author.displayName,
+                    username: post.author.username,
+                    avatar: post.author.avatar
+                }
+            }
+        })
+        return res.json({ status: "success", posts: results });
+    } catch (err) {
+        return res.status(500).json({ status: "failed", message: err.message });
+    }
+});
+
 export default controller;

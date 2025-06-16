@@ -66,11 +66,15 @@ controller.post("/login", async (req, res) => {
 
 controller.get("/status", async (req, res) => {
     const token = req.cookies.session;
-    const session = (await validateToken(token))?.session;
+    const {session, user} = (await validateToken(token));
     if (session != null) {
-        return res.json({ status: "success" });
+        return res.json({ status: "success", user: {
+            display_name: user.displayName,
+            username: user.username,
+            avatar: user.avatar
+        } });
     }
-    return res.json({ status: "failed" });
+    return res.json({ status: "failed", user: null });
 });
 
 controller.post("/logout", async (req, res) => {
