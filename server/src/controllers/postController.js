@@ -64,7 +64,7 @@ controller.get("/get-post/:user/:post", async (req, res) => {
                 username: author.username,
                 avatar: author.avatar
             },
-            can_edit: user && (user?._id === author?._id)
+            can_edit: user && user?._id.equals(author?._id)
         });
     } else {
         return res.status(404).json({ status: "failed", message: "Post not found" });

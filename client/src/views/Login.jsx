@@ -5,9 +5,14 @@ import React from "react";
 import { useNavigate } from "react-router";
 import { useAlert } from "../hooks/alerts";
 import NavBar from "../components/navBar";
+import { useSession } from "../hooks/session";
 
 export default function Login() {
+    const { isLoggedIn } = useSession();
     const navigate = useNavigate();
+    if (isLoggedIn()) {
+        navigate("/");
+    }
     const alert = useAlert();
     const mutation = useMutation({
         mutationFn: (event) => {
@@ -21,7 +26,7 @@ export default function Login() {
             }
         },
         onError: (result) => {
-            alert({status: "error", message: `Error ${result.status}: ${result.response.data.message}`});
+            alert({ status: "error", message: `Error ${result.status}: ${result.response.data.message}` });
         }
     });
     return (

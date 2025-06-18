@@ -1,4 +1,6 @@
-export default function ByAuthor({author}) {
+import { Link } from "react-router";
+
+export default function ByAuthor({ author, link }) {
     return (
         <div className="flex flex-row">
             <div className="avatar avatar-placeholder mr-4">
@@ -6,9 +8,13 @@ export default function ByAuthor({author}) {
                     <span>AV</span>
                 </div>
             </div>
-            <div>
+            <div className="flex flex-col justify-center">
                 <div className="font-semibold">{author.display_name}</div>
-                <a href={`/user/${author.username}`} className="link link-hover">@{author.username}</a>
+                {link ?
+                    <Link to={`/user/${author.username}`} className="link link-hover">@{author.username}</Link>
+                    :
+                    <div>@{author.username}</div>
+                }
             </div>
         </div>
     );

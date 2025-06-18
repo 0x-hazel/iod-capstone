@@ -6,9 +6,14 @@ import escapeStringRegexp from 'escape-string-regexp';
 import qs from "qs";
 import { useAlert } from "../hooks/alerts";
 import NavBar from "../components/navBar";
+import { useSession } from "../hooks/session";
 
 export default function Register() {
+    const { isLoggedIn } = useSession();
     const navigate = useNavigate();
+    if (isLoggedIn()) {
+        navigate("/");
+    }
     const alert = useAlert();
     const mutation = useMutation({
         mutationFn: (event) => {
@@ -22,7 +27,7 @@ export default function Register() {
             }
         },
         onError: (result) => {
-            alert({status: "error", message: `Error ${result.status}: ${result.response.data.message}`});
+            alert({ status: "error", message: `Error ${result.status}: ${result.response.data.message}` });
         }
     });
     const [password, setPassword] = useState("");
