@@ -6,6 +6,7 @@ import axios from "axios";
 import qs from "qs";
 import MarkdownView from "../components/markdownView";
 import NavBar from "../components/navBar";
+import { useAlert } from "../hooks/alerts";
 
 export default function Write() {
     const navigate = useNavigate();
@@ -13,6 +14,7 @@ export default function Write() {
     const [contents, setContents] = useState("");
     const [view, checked] = useEditView();
     const [height, setHeight] = useState(64);
+    const alert = useAlert()
 
     const savePost = useMutation({
         mutationFn: (event) => {
@@ -21,9 +23,12 @@ export default function Write() {
             return axios.post("/api/post/create-post", qs.stringify(Object.fromEntries(formData.entries())));
         },
         onSuccess: (result) => {
-            console.log("SUCCESS");
-            console.log(result.data.message);
-            navigate(result?.data?.message);
+            const path = result?.data?.message;
+            if (!path) {
+                alert({ status: "error", message: "Failed to navigate to created post." })
+            } else {
+                navigate(path);
+            }
         }
     });
 
