@@ -7,8 +7,9 @@ import Index from './views/Index.jsx';
 import Login from './views/Login.jsx';
 import Register from './views/Register.jsx';
 import Write from './views/Write.jsx';
-import { AlertProvider } from './components/alertSection.jsx';
+import { AlertProvider } from './hooks/alerts.jsx';
 import Post from './views/Post.jsx';
+import { SessionProvider } from './hooks/session.jsx';
 
 const queryClient = new QueryClient();
 
@@ -16,15 +17,17 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <AlertProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path='/write' element={<Write />} />
-            <Route path='/user/:user/post/:post' element={<Post />} />
-          </Routes>
-        </BrowserRouter>
+        <SessionProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path='/write' element={<Write />} />
+              <Route path='/user/:user/post/:post' element={<Post />} />
+            </Routes>
+          </BrowserRouter>
+        </SessionProvider>
       </AlertProvider>
     </QueryClientProvider>
   </StrictMode>,
