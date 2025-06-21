@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useAlert } from "../hooks/alerts";
 import NavBar from "../components/navBar";
 import CompactPostView from "../components/compactPostView";
 import WriteButton from "../components/writeButton";
@@ -14,7 +13,6 @@ export default function Index() {
             return axios.get("/api/post/recent-posts");
         }
     });
-    const alert = useAlert();
     const isLoading = posts.isLoading
     const postData = posts?.data?.data?.posts ?? []
     return (
@@ -33,7 +31,6 @@ export default function Index() {
             </div>
             {isLoggedIn() && <WriteButton />}
             <p>Hello, world!</p>
-            <button className="btn" onClick={() => alert({ status: "error", message: "Hell yeah" })}>Alert</button>
         </>
     );
 }
