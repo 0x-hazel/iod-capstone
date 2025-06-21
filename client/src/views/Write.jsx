@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import useEditView from "../components/editView";
+import useEditView from "../hooks/editView";
 import { useNavigate } from "react-router";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
@@ -46,7 +46,7 @@ export default function Write() {
                         {!checked ?
                             <>
                                 <input type="text" placeholder="Post Title" className="input text-lg w-full mb-2 md:mb-4" value={title} onChange={(e) => setTitle(e.target.value)} />
-                                <textarea className="textarea textarea-secondary w-full" style={{height: `${height}px`}} value={contents} onChange={updateText}></textarea>
+                                <textarea className="textarea textarea-secondary w-full" style={{ height: `${height}px` }} value={contents} onChange={updateText}></textarea>
                             </>
                             :
                             <>
@@ -60,7 +60,7 @@ export default function Write() {
                         <form className="flex gap-4" onSubmit={savePost.mutate}>
                             <input type="hidden" name="title" value={title} />
                             <input type="hidden" name="content" value={contents} />
-                            <button className="btn" onClick={(e) => {e.preventDefault();navigate(-1)}}>Cancel</button>
+                            <button className="btn" onClick={(e) => { e.preventDefault(); navigate(-1) }}>Cancel</button>
                             <button className="btn btn-primary">Save</button>
                         </form>
                     </div>

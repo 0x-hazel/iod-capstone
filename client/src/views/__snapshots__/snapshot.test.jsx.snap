@@ -1,0 +1,454 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`snapshot:Index 1`] = `
+<DocumentFragment>
+  <div
+    class="sticky top-0 z-100"
+  >
+    <div
+      class="navbar bg-base-100 shadow-lg"
+    >
+      <div
+        class="flex-1"
+      >
+        <a
+          class="btn btn-ghost text-xl"
+          data-discover="true"
+          href="/"
+        >
+          Libris
+        </a>
+      </div>
+      <div
+        class="flex-none"
+      >
+        <ul
+          class="menu menu-horizontal px-1"
+        >
+          <li>
+            <a
+              data-discover="true"
+              href="/login"
+            >
+              Log In
+            </a>
+          </li>
+          <li>
+            <a
+              data-discover="true"
+              href="/register"
+            >
+              Register
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div
+    class="flex items-center justify-center w-screen flex-col"
+  >
+    <div
+      class="p-4 w-full md:w-11/17"
+    >
+      <span
+        class="loading loading-ring loading-xl"
+      />
+    </div>
+  </div>
+  <p>
+    Hello, world!
+  </p>
+</DocumentFragment>
+`;
+
+exports[`snapshot:Login 1`] = `
+<DocumentFragment>
+  <div
+    class="sticky top-0 z-100"
+  >
+    <div
+      class="navbar bg-base-100 shadow-lg"
+    >
+      <div
+        class="flex-1"
+      >
+        <a
+          class="btn btn-ghost text-xl"
+          data-discover="true"
+          href="/"
+        >
+          Libris
+        </a>
+      </div>
+      <div
+        class="flex-none"
+      >
+        <ul
+          class="menu menu-horizontal px-1"
+        >
+          <li>
+            <a
+              data-discover="true"
+              href="/login"
+            >
+              Log In
+            </a>
+          </li>
+          <li>
+            <a
+              data-discover="true"
+              href="/register"
+            >
+              Register
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div
+    class="flex items-center justify-center h-screen"
+  >
+    <div
+      class="card card-border bg-base-100 w-96"
+    >
+      <div
+        class="card-body items-center text-center"
+      >
+        <h2
+          class="card-title mb-4"
+        >
+          Log In
+        </h2>
+        <form
+          class="w-full"
+        >
+          <label
+            class="floating-label mb-8 w-full"
+          >
+            <span>
+              Your Username
+            </span>
+            <input
+              class="input validator"
+              name="username"
+              placeholder="Username"
+              required=""
+              type="text"
+            />
+          </label>
+          <label
+            class="floating-label mb-8 w-full"
+          >
+            <span>
+              Your Password
+            </span>
+            <input
+              class="input"
+              minlength="6"
+              name="password"
+              placeholder="Password"
+              required=""
+              type="password"
+            />
+          </label>
+          <div
+            class="card-actions"
+          >
+            <button
+              class="btn btn-primary"
+            >
+              Log In
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`snapshot:Post 1`] = `
+<DocumentFragment>
+  <p>
+    Loading...
+  </p>
+</DocumentFragment>
+`;
+
+exports[`snapshot:Register 1`] = `
+<DocumentFragment>
+  <div
+    class="sticky top-0 z-100"
+  >
+    <div
+      class="navbar bg-base-100 shadow-lg"
+    >
+      <div
+        class="flex-1"
+      >
+        <a
+          class="btn btn-ghost text-xl"
+          data-discover="true"
+          href="/"
+        >
+          Libris
+        </a>
+      </div>
+      <div
+        class="flex-none"
+      >
+        <ul
+          class="menu menu-horizontal px-1"
+        >
+          <li>
+            <a
+              data-discover="true"
+              href="/login"
+            >
+              Log In
+            </a>
+          </li>
+          <li>
+            <a
+              data-discover="true"
+              href="/register"
+            >
+              Register
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div
+    class="flex items-center justify-center h-screen"
+  >
+    <div
+      class="card card-border bg-base-100 w-96"
+    >
+      <div
+        class="card-body items-center text-center"
+      >
+        <h2
+          class="card-title mb-8"
+        >
+          Register
+        </h2>
+        <form
+          class="w-full"
+        >
+          <label
+            class="floating-label w-full h-24"
+          >
+            <span>
+              Your Username
+            </span>
+            <input
+              class="input validator"
+              id="username"
+              maxlength="30"
+              minlength="3"
+              name="username"
+              pattern="[A-Za-z][A-Za-z0-9\\-]*"
+              placeholder="Username"
+              required=""
+              title="Only letters, numbers or dash"
+              type="text"
+            />
+            <p
+              class="validator-hint"
+            >
+              Must be 3 to 30 characters containing only letters, numbers or dash.
+            </p>
+          </label>
+          <label
+            class="floating-label w-full h-24"
+          >
+            <span>
+              Your Password
+            </span>
+            <input
+              class="input validator"
+              id="password"
+              minlength="6"
+              name="password"
+              pattern="(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{5,}"
+              placeholder="Password"
+              required=""
+              title="Must be at least 6 characters, including number, lowercase letter, uppercase letter"
+              type="password"
+              value=""
+            />
+            <p
+              class="validator-hint"
+            >
+              Must be at least 6 characters, including at least one number, at least one lowercase letter, and at least one uppercase letter.
+            </p>
+          </label>
+          <label
+            class="floating-label w-full h-24"
+          >
+            <span>
+              Your Password Again
+            </span>
+            <input
+              class="input validator"
+              id="password2"
+              minlength="6"
+              name="password2"
+              pattern=""
+              placeholder="Confirm Password"
+              required=""
+              title="Must match the previous password"
+              type="password"
+            />
+            <p
+              class="validator-hint"
+            >
+              Must match the previous password.
+            </p>
+          </label>
+          <div
+            class="card-actions"
+          >
+            <button
+              class="btn btn-primary"
+            >
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`snapshot:User 1`] = `
+<DocumentFragment>
+  <p>
+    Loading...
+  </p>
+</DocumentFragment>
+`;
+
+exports[`snapshot:Write 1`] = `
+<DocumentFragment>
+  <div
+    class="sticky top-0 z-100"
+  >
+    <div
+      class="navbar bg-base-100 shadow-lg"
+    >
+      <div
+        class="flex-1"
+      >
+        <a
+          class="btn btn-ghost text-xl"
+          data-discover="true"
+          href="/"
+        >
+          Libris
+        </a>
+      </div>
+      <div
+        class="flex-none"
+      >
+        <ul
+          class="menu menu-horizontal px-1"
+        >
+          <li>
+            <a
+              data-discover="true"
+              href="/login"
+            >
+              Log In
+            </a>
+          </li>
+          <li>
+            <a
+              data-discover="true"
+              href="/register"
+            >
+              Register
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div
+    class="flex items-center justify-center w-screen flex-col"
+  >
+    <div
+      class="p-4 w-full md:w-11/17"
+    >
+      <div
+        class="grid grid-cols-3 mb-4 md:mb-8"
+      >
+        <p
+          class="text-primary text-right"
+        >
+          Write
+        </p>
+        <div
+          class="flex items-center justify-center"
+        >
+          <input
+            class="toggle border-primary text-primary checked:border-accent checked:text-accent"
+            type="checkbox"
+          />
+        </div>
+        <p />
+      </div>
+      <div
+        class="mb-4 md:mb-8"
+      >
+        <input
+          class="input text-lg w-full mb-2 md:mb-4"
+          placeholder="Post Title"
+          type="text"
+          value=""
+        />
+        <textarea
+          class="textarea textarea-secondary w-full"
+          style="height: 64px;"
+        />
+      </div>
+      <div
+        class="flex flex-row gap-4"
+      >
+        <div
+          class="flex-1"
+        />
+        <form
+          class="flex gap-4"
+        >
+          <input
+            name="title"
+            type="hidden"
+            value=""
+          />
+          <input
+            name="content"
+            type="hidden"
+            value=""
+          />
+          <button
+            class="btn"
+          >
+            Cancel
+          </button>
+          <button
+            class="btn btn-primary"
+          >
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

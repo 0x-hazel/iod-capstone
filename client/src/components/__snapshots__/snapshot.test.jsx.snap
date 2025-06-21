@@ -1,0 +1,207 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`snapshot:ByAuthor 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-row"
+  >
+    <div
+      class="avatar avatar-placeholder mr-4"
+    >
+      <div
+        class="w-12 rounded-full relative"
+      >
+        <img
+          src="/icon.svg"
+        />
+      </div>
+    </div>
+    <div
+      class="flex flex-col justify-center"
+    >
+      <div
+        class="font-semibold"
+      >
+        Author
+      </div>
+      <div>
+        @author
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`snapshot:CompactPostView 1`] = `
+<DocumentFragment>
+  <a
+    data-discover="true"
+    href="/user/author/post/compact-post-view"
+  >
+    <div
+      class="card w-full bg-base-100 card-sm shadow-md hover:shadow-xl card-border mb-4 md:mb-8"
+    >
+      <div
+        class="card-body"
+      >
+        <h2
+          class="card-title"
+        >
+          Compact Post View
+        </h2>
+        <div
+          class="flex flex-row"
+        >
+          <div
+            class="avatar avatar-placeholder mr-4"
+          >
+            <div
+              class="w-12 rounded-full relative"
+            >
+              <img
+                src="/icon.svg"
+              />
+            </div>
+          </div>
+          <div
+            class="flex flex-col justify-center"
+          >
+            <div
+              class="font-semibold"
+            >
+              Author
+            </div>
+            <div>
+              @author
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</DocumentFragment>
+`;
+
+exports[`snapshot:EditableAvatar 1`] = `
+<DocumentFragment>
+  <div
+    class="avatar hover:cursor-pointer hover:brightness-50"
+  >
+    <div
+      class="w-24 rounded-full relative"
+    >
+      <img
+        src="/icon.svg"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`snapshot:EditableTextField 1`] = `
+<DocumentFragment>
+  <p
+    class="cursor-pointer "
+  >
+    Editable text
+  </p>
+</DocumentFragment>
+`;
+
+exports[`snapshot:EditableTextLine 1`] = `
+<DocumentFragment>
+  <h1
+    class="cursor-pointer "
+  />
+</DocumentFragment>
+`;
+
+exports[`snapshot:MarkdownView 1`] = `
+<DocumentFragment>
+  <div
+    class="card card-border border-secondary w-full"
+  >
+    <div
+      class="card-body"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`snapshot:NavBar 1`] = `
+<DocumentFragment>
+  <div
+    class="sticky top-0 z-100"
+  >
+    <div
+      class="navbar bg-base-100 shadow-lg"
+    >
+      <div
+        class="flex-1"
+      >
+        <a
+          class="btn btn-ghost text-xl"
+          data-discover="true"
+          href="/"
+        >
+          Libris
+        </a>
+      </div>
+      <div
+        class="flex-none"
+      >
+        <ul
+          class="menu menu-horizontal px-1"
+        >
+          <li>
+            <a
+              data-discover="true"
+              href="/login"
+            >
+              Log In
+            </a>
+          </li>
+          <li>
+            <a
+              data-discover="true"
+              href="/register"
+            >
+              Register
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`snapshot:WriteButton 1`] = `
+<DocumentFragment>
+  <div
+    class="toast toast-end"
+  >
+    <a
+      data-discover="true"
+      href="/write"
+    >
+      <button
+        class="btn btn-soft btn-primary p-6 fill-primary hover:fill-base-100"
+      >
+        <svg
+          class="w-8 h-8"
+        >
+          <use
+            href="/quill-icon.svg#Capa_1"
+          />
+        </svg>
+        <div
+          class="hidden md:block ml-1"
+        >
+          Write
+        </div>
+      </button>
+    </a>
+  </div>
+</DocumentFragment>
+`;
