@@ -27,7 +27,7 @@ export default function User() {
             const formData = new FormData(event.target);
             return axios.post(`/api/user/update-user/${user}`, formData);
         },
-        onSuccess: (result) => {
+        onSuccess: () => {
             setIsEdited(false);
             navigate(0);
         },
