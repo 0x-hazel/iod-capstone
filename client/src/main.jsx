@@ -10,6 +10,7 @@ import Write from './views/Write.jsx';
 import { AlertProvider } from './hooks/alerts.jsx';
 import Post from './views/Post.jsx';
 import { SessionProvider } from './hooks/session.jsx';
+import User from './views/User.jsx';
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ createRoot(document.getElementById('root')).render(
               <Route path="/register" element={<Register />} />
               <Route path='/write' element={<Write />} />
               <Route path='/user/:user/post/:post' element={<Post />} />
+              <Route path='/user/:user' element={<User />} />
             </Routes>
           </BrowserRouter>
         </SessionProvider>
